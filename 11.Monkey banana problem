@@ -1,0 +1,35 @@
+class Monkey:
+    def __init__(self):
+        self.has_box = False
+
+    def pick_up_box(self):
+        self.has_box = True
+        print("Monkey picked up the box.")
+
+    def drop_box(self):
+        self.has_box = False
+        print("Monkey dropped the box.")
+
+    def reach_bananas(self):
+        if self.has_box:
+            print("Monkey reached the bananas! 🍌🐒")
+        else:
+            print("Monkey needs a box to reach the bananas.")
+
+class Room:
+    def __init__(self):
+        self.box_in_room = True  
+
+    def move_box(self):
+        if self.box_in_room:
+            print("Box moved to the center of the room.")
+            self.box_in_room = False
+        else:
+            print("No box in the room.")
+monkey = Monkey()
+room = Room()
+monkey.pick_up_box()
+room.move_box()
+monkey.reach_bananas()
+monkey.drop_box()
+monkey.reach_bananas()
