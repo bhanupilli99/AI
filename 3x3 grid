@@ -1,0 +1,29 @@
+import numpy as np
+
+def create_puzzle():
+    puzzle = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 0]])
+    return puzzle
+
+def print_puzzle(puzzle):
+    for row in puzzle:
+        print(row)
+
+def move_up(puzzle):
+    empty_space = np.where(puzzle == 0)
+    if empty_space[0] > 0:
+        puzzle[empty_space], puzzle[empty_space[0] - 1, empty_space[1]] = puzzle[empty_space[0] - 1, empty_space[1]], puzzle[empty_space]
+    return puzzle
+
+# Implement other move functions (move_down, move_left, move_right) similarly
+
+def solve_puzzle():
+    puzzle = create_puzzle()
+    print("Initial puzzle:")
+    print_puzzle(puzzle)
+
+    # Implement the solving logic here
+
+    print("Solved puzzle:")
+    print_puzzle(puzzle)
+
+solve_puzzle()
