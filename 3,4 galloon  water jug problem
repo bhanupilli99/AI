@@ -1,0 +1,25 @@
+def water_jug_problem():
+    jug_3 = 0
+    jug_4 = 0
+
+    # Fill the 3-gallon jug
+    jug_3 = 3
+
+    # Pour water from 3-gallon jug to 4-gallon jug
+    jug_4 = jug_3
+    jug_3 = 0
+
+    # Fill the 3-gallon jug again
+    jug_3 = 3
+
+    # Pour water from 3-gallon jug to 4-gallon jug until it's full
+    jug_4 = jug_3
+    jug_3 = jug_3 - (4 - jug_4)
+
+    # Pour out water from 4-gallon jug until it has 2 gallons left
+    jug_4 = 2
+
+    # Print the final state of the jugs
+    print("Final state: 3-gallon jug =", jug_3, "gallons, 4-gallon jug =", jug_4, "gallons")
+
+water_jug_problem()
